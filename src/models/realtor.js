@@ -29,7 +29,23 @@ const realtorSchema = new mongoose.Schema(
     },
     resetPasswordToken: {
       type: String,
-    },
+    },  
+    property: [
+        {
+          state: {
+            type: String,
+          },
+          city: {
+            type: String,
+          },
+          price: {
+            type: Number,
+          },
+          Address: {
+            type: String,
+          },
+        },
+        ],
     no_of_tries: {
       default: 0,
       type: Number,

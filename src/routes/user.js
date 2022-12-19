@@ -29,6 +29,7 @@ router.get(
   userValidator.forgetPasswordForm,
   UserController.forgetPassword
 );
+
 module.exports = router;
 
 
