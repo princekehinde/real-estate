@@ -1,0 +1,1 @@
+#An e-commerce project that enables users to buy and sell products online rather than in the traditional face-to-face means of shopping. A company can process orders and receive payments through this project

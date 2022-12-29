@@ -16,19 +16,6 @@ router.post(
   realtorValidator.registerAndLoginForm, 
   realtorController.login
 );
-
-router.put(
-  "/change-password",
-  Middleware.isUserAuthenticated,
-  realtorValidator.changePasswordForm,
-  realtorController.changePassword
-);
-
-router.get(
-  "/forget-password",
-  realtorValidator.forgetPasswordForm,
-  realtorController.forgetPassword
-);
 module.exports = router;
 
 
