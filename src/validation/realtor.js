@@ -20,6 +20,24 @@ class realtorValidator {
     } catch (error) {
       return errorResponse(res, 400, error.message);
     }
-  }
+   }
+
+   static async propertyForm(req, res, next) {
+    try {
+      const propertyFormSchema = Joi.object().keys({
+            state:Joi.string(),
+            city: Joi.string(),
+            price: Joi.string(),
+            Address:  Joi.string(),
+      })
+
+      await propertyFormSchema.validateAsync(req.body, {
+        abortEarly: false,
+      })
+      next();
+    }catch(error){
+      return errorResponse(res, 400, error.message);
+    }
+   }
 }
 module.exports = realtorValidator;

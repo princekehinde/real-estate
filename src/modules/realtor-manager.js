@@ -87,6 +87,46 @@ class realtorManager {
       },
     };
   }
+
+    /**
+   * @description - This method is used to login a user
+   * @param {object} data - The data of the user
+   * @returns {object} - The response of the user
+   */
+  static async property(data) {
+    try {
+      const { state, city, price, Address, } = data;
+
+      // const realtor = await RealtorModel.findOne({
+      //   $or: [
+      //     {property: property},
+      //   ],
+      // });
+
+      // if (realtor)
+      //   return {
+      //     statusCode: 400,
+      //     message: "property already exists",
+      //   };
+
+
+      const createrealtor = await RealtorModel.create({
+        state: state,
+        city: city,
+        price: price,
+        Address: Address
+      });
+
+      return {
+        statusCode: 200,
+        message: "property created successfully",
+        data: await realtorManager.realtorResponse(createrealtor),
+      };
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
 }
 
 module.exports = realtorManager;

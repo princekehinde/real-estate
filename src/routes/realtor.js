@@ -16,6 +16,12 @@ router.post(
   realtorValidator.registerAndLoginForm, 
   realtorController.login
 );
+
+router.post(
+  "/property",
+  realtorValidator.propertyForm,
+  realtorController.property
+)
 module.exports = router;
 
 

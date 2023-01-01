@@ -25,14 +25,12 @@ const realtorSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+      // required: true,
     },
     resetPasswordToken: {
       type: String,
     },  
-    property: [
-        {
-          state: {
+state: {
             type: String,
           },
           city: {
@@ -44,8 +42,6 @@ const realtorSchema = new mongoose.Schema(
           Address: {
             type: String,
           },
-        },
-        ],
     no_of_tries: {
       default: 0,
       type: Number,

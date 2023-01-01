@@ -42,5 +42,23 @@ class realtorController {
       return errorResponse(res, 500, error.message ,console.log(error));
     }
   }
+
+  static async property(req, res) {
+    try {
+      const result = await realtorManager.property(req.body);
+
+      if (result.statusCode === 400)
+        return errorResponse(res, result.statusCode, result.message);
+
+      return successResponse(
+        res,
+        result.statusCode,
+        result.message,
+        result.data
+      );
+    } catch (error) {
+      return errorResponse(res, 500, error.message);
   }
+}
+}
 module.exports = realtorController;

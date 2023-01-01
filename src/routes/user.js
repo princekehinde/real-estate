@@ -30,6 +30,24 @@ router.get(
   UserController.forgetPassword
 );
 
+// router.get(
+//   "/forget-password",
+//   userValidator.forgetPasswordForm,
+//   UserController.forgetPassword
+// );
+
+// router.get(
+//   "/forget-password",
+//   userValidator.forgetPasswordForm,
+//   UserController.forgetPassword
+// );
+
+// router.get(
+//   "/forget-password",
+//   userValidator.forgetPasswordForm,
+//   UserController.forgetPassword
+// );
+
 module.exports = router;
 
 
